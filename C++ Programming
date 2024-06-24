@@ -1,138 +1,78 @@
 #include <iostream>
-#include <cstring>
+#include <fstream>
+#include <string>
 
 using namespace std;
 
 struct Student {
-  int roll_number;
-  string first_name;
-  string last_name;
+  int roll_no;
+  string name;
   float cgpa;
 };
 
-class StudentRecordManagement {
- private:
-  Student students[100];
-  int num_students;
+void addStudent(fstream& file) {
+  Student student;
+  cout << "Enter student roll number: ";
+  cin >> student.roll_no;
+  cout << "Enter student name: ";
+  cin.ignore();
+  getline(cin, student.name);
+  cout << "Enter student CGPA: ";
+  cin >> student.cgpa;
 
- public:
-  StudentRecordManagement() {
-    num_students = 0;
+  file.write(reinterpret_cast<char*>(&student), sizeof(student));
+}
+
+void displayStudent(fstream& file) {
+  Student student;
+  file.read(reinterpret_cast<char*>(&student), sizeof(student));
+
+  while (!file.eof()) {
+    cout << "Roll number: " << student.roll_no << endl;
+    cout << "Name: " << student.name << endl;
+    cout << "CGPA: " << student.cgpa << endl;
+
+    file.read(reinterpret_cast<char*>(&student), sizeof(student));
   }
-
-  void addStudent() {
-    if (num_students == 100) {
-      cout << "Student record full!" << endl;
-      return;
-    }
-
-    cout << "Enter student details:" << endl;
-    cout << "Roll number: ";
-    cin >> students[num_students].roll_number;
-    cin.ignore(); // Clear input buffer
-
-    cout << "First name: ";
-    getline(cin, students[num_students].first_name);
-
-    cout << "Last name: ";
-    getline(cin, students[num_students].last_name);
-
-    cout << "CGPA: ";
-    cin >> students[num_students].cgpa;
-
-    num_students++;
-  }
-
-  void displayStudents() {
-    if (num_students == 0) {
-      cout << "No students found!" << endl;
-      return;
-    }
-
-    cout << "Student Records:" << endl;
-    for (int i = 0; i < num_students; i++) {
-      cout << "Roll number: " << students[i].roll_number << endl;
-      cout << "Name: " << students[i].first_name << " " << students[i].last_name << endl;
-      cout << "CGPA: " << students[i].cgpa << endl << endl;
-    }
-  }
-
-  void searchStudent() {
-    int roll_number;
-
-    cout << "Enter roll number to search: ";
-    cin >> roll_number;
-
-    bool found = false;
-    for (int i = 0; i < num_students; i++) {
-      if (students[i].roll_number == roll_number) {
-        cout << "Student Found:" << endl;
-        cout << "Roll number: " << students[i].roll_number << endl;
-        cout << "Name: " << students[i].first_name << " " << students[i].last_name << endl;
-        cout << "CGPA: " << students[i].cgpa << endl;
-        found = true;
-        break;
-      }
-    }
-
-    if (!found) {
-      cout << "Student not found!" << endl;
-    }
-  }
-
-  void updateStudent() {
-    int roll_number;
-
-    cout << "Enter roll number to update: ";
-    cin >> roll_number;
-
-    bool found = false;
-    for (int i = 0; i < num_students; i++) {
-      if (students[i].roll_number == roll_number) {
-        cout << "Enter new student details:" << endl;
-        cout << "First name: ";
-        getline(cin, students[i].first_name);
-
-        cout << "Last name: ";
-        getline(cin, students[i].last_name);
-
-        cout << "CGPA: ";
-        cin >> students[i].cgpa;
-
-        found = true;
-        break;
-      }
-    }
-
-    if (!found) {
-      cout << "Student not found!" << endl;
-    }
-  }
-};
+}
 
 int main() {
-  StudentRecordManagement record;
+  fstream file;
+  file.open("student.dat", ios::out | ios::binary);
+
+  if (!file.is_open()) {
+    cout << "Error opening file!" << endl;
+    return 1;
+  }
+
+  file.close();
 
   int choice;
-  while (true) {
-    cout << "\nStudent Record Management System" << endl;
-    cout << "1. Add Student" << endl;
-    cout << "2. Display Students" << endl;
-    cout << "3. Search Student" << endl;
-    cout << "4. Update Student" << endl;
-    cout << "5. Exit" << endl;
+  do {
+    cout << "\nMenu" << endl;
+    cout << "1. Add student" << endl;
+    cout << "2. Display student records" << endl;
+    cout << "3. Exit" << endl;
     cout << "Enter your choice: ";
     cin >> choice;
 
     switch (choice) {
       case 1:
-        record.addStudent();
+        file.open("student.dat", ios::app | ios::binary);
+        addStudent(file);
+        file.close();
         break;
       case 2:
-        record.displayStudents();
+        file.open("student.dat", ios::in | ios::binary);
+        displayStudent(file);
+        file.close();
         break;
       case 3:
-        record.searchStudent();
         break;
-      case 4:
-        record.update
+      default:
+        cout << "Invalid choice!" << endl;
+    }
+  } while (choice != 3);
+
+  return 0;
+}
