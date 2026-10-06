@@ -1,5 +1,5 @@
 # 👨‍💻 Vivek Bharat Toradmal
-### Mechanical & Automation Engineer • Robotics & Embedded Systems Developer
+### Automation & Robotics Engineer • ROS 2, Embedded IoT & CAD Developer
 
 <p align="left">
   <a href="https://vivek5391.github.io"><img src="https://img.shields.io/badge/🌐%20Live%20Portfolio-vivek5391.github.io-38bdf8?style=for-the-badge&logo=googlechrome&logoColor=white" alt="Live Portfolio"></a>
@@ -14,7 +14,7 @@
 
 ## 🌟 About Me
 
-I am a **Mechanical & Automation Engineer** with a passion for designing end-to-end electro-mechanical systems — from precision 3D CAD modeling and kinematic simulation in **ROS 2 & Gazebo**, to real-world embedded firmware on **ESP32 & Arduino**, and industrial automation.
+I am an **Automation & Robotics Engineer** with a passion for designing end-to-end electro-mechanical and robotic systems — from precision 3D CAD modeling and kinematic simulation in **ROS 2 & Gazebo**, to real-world embedded firmware on **ESP32 & Arduino**, and industrial PLC automation.
 
 - 🤖 **Robotics**: Kinematics (FK/IK), URDF/Xacro modeling, digital twins, RViz2, Gazebo simulation, hardware-in-the-loop serial bridges.
 - ⚙️ **CAD/CAM**: Parametric assembly, tolerance analysis (GD&T), 3D printing (FDM/CoreXY), sheet metal, technical manufacturing drawings.
