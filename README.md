@@ -2,11 +2,13 @@
 ### Mechanical & Automation Engineer • Robotics & Embedded Systems Developer
 
 <p align="left">
-  <a href="https://github.com/vivek5391"><img src="https://img.shields.io/badge/Focus-Robotics%20%26%20Automation-blue?style=for-the-badge&logo=ros" alt="Robotics"></a>
-  <a href="https://github.com/vivek5391"><img src="https://img.shields.io/badge/ROS%202-Humble%20Hawksbill-22314E?style=for-the-badge&logo=ros" alt="ROS 2"></a>
-  <a href="https://github.com/vivek5391"><img src="https://img.shields.io/badge/Hardware-ESP32%20%7C%20Arduino-E7352C?style=for-the-badge&logo=espressif" alt="Embedded"></a>
+  <a href="https://vivek5391.github.io"><img src="https://img.shields.io/badge/🌐%20Live%20Portfolio-vivek5391.github.io-38bdf8?style=for-the-badge&logo=googlechrome&logoColor=white" alt="Live Portfolio"></a>
+  <a href="https://github.com/vivek5391/6dof-robotic-arm-ros2"><img src="https://img.shields.io/badge/ROS%202-Humble%20Hawksbill-22314E?style=for-the-badge&logo=ros" alt="ROS 2"></a>
+  <a href="https://github.com/vivek5391/esp32-industrial-iot-controller"><img src="https://img.shields.io/badge/Hardware-ESP32%20%7C%20Arduino-E7352C?style=for-the-badge&logo=espressif" alt="Embedded"></a>
   <a href="https://github.com/vivek5391"><img src="https://img.shields.io/badge/CAD-Fusion%20360%20%7C%20SolidWorks-0696D7?style=for-the-badge&logo=autodesk" alt="CAD"></a>
 </p>
+
+> 🚀 **Explore my interactive 3D robotics simulation & live portfolio at [vivek5391.github.io](https://vivek5391.github.io)**
 
 ---
 
@@ -115,5 +117,5 @@ I am a **Mechanical & Automation Engineer** with a passion for designing end-to-
 
 <p align="center">
   <i>Constantly building, optimizing, and exploring the intersection of mechanical engineering and intelligent robotics.</i><br>
-  <b><a href="https://github.com/vivek5391">github.com/vivek5391</a></b>
+  <b><a href="https://vivek5391.github.io">vivek5391.github.io</a></b>
 </p>
